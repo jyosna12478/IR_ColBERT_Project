@@ -4,7 +4,7 @@ This repository includes modified ColBERT code to support a new aggregation meth
 
 ---
 
-## 🔧 Setup
+# Setup
 
 Make sure to install the required dependencies and activate your environment:
 
@@ -14,7 +14,7 @@ conda activate colbert_env
 
 ---
 
-## 📦 Indexing
+## Indexing
 
 To build an index using ColBERT representations of passages:
 
@@ -26,7 +26,7 @@ This script builds a FAISS index on the LoTTE writing dataset. Make sure to spec
 
 ---
 
-## 🔍 Retrieval
+## Retrieval
 
 To perform retrieval with either MaxSim (default) or SoftMaxSim:
 
@@ -38,7 +38,7 @@ Use `--softmax True` to enable SoftMaxSim scoring. Set it to `False` to use the 
 
 ---
 
-## 📊 Evaluation
+## Evaluation
 
 To evaluate the retrieval results using Success@5, Recall@10, and NDCG@10:
 
@@ -50,7 +50,7 @@ This command computes the metrics for the search queries on the LoTTE writing de
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 - `index_lotte.py` → builds the index
 - `retrieval_lotte.py` → runs retrieval with MaxSim or SoftMaxSim
