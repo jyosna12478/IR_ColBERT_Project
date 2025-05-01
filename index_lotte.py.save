@@ -1,0 +1,23 @@
+from colbert.infra import Run, RunConfig, ColBERTConfig
+from colbert import Indexer
+
+if __name__ == "__main__":
+    with Run().context(RunConfig(nranks=1, experiment="lotte")):
+        
+        # Define ColBERT configuration
+        config = ColBERTConfig(
+            nbits=2,  # Quantization parameter (can change to 4 or 8 for better performance)
+            root="experiments/lotte/indexes",  # Output directory for the index
+            bsize=128,
+            accumsteps=2,
+        )
+        
+        # Define the indexer
+        indexer = Indexer(checkpoint="checkpoints/", config=config)
+        
+        # Perform indexing on LoTTE dataset
+        indexer.index(
+            name="lotte.nbits=2",  # Index name
+            collection="data/lotte/writing/dev/collection.tsv",
+            overwrite= True , # Path to the LoTTE dataset
+        )

@@ -1,0 +1,2 @@
+[query_type=search, dataset=writing] Success@10: 85.7 | Recall@10: 70.9 | NDCG@10: 62.1
+
